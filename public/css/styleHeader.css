@@ -1,0 +1,127 @@
+
+*{
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body{
+    height: 145vh;
+    position: relative;
+    z-index: 1000;
+    background-color: #f4f6f6;
+    font-family: sans-serif;
+}
+
+header{
+    background-color: #691C32; 
+    width: 100%;
+    position: fixed;
+    z-index: 1000; /* Asegura que esté por encima del contenido */
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    height: 100px;
+}
+
+h3{
+    font-family: 'Gelica Serif', sans-serif;
+    color: blue; 
+}
+
+.logo{
+    height: 95px;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item{
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #f2f2f2;
+}
+
+.item:hover{
+    color: #ff2258;
+}
+
+#menu{
+    display: none;
+}
+
+.menu-icono{
+    width: 25px;
+}
+
+.menuIcon{
+    cursor: pointer;
+    display: none;
+}
+
+.btnPerfil{
+    padding: 10px 24px;
+    border-radius: 30px;
+    background-color: #6F7271;
+    color: #f2f2f2;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btnPerfil:hover{
+    background-color: #691C32;
+}
+
+.boton{
+        background-color: #9f2241;
+        color: #fff;
+    }
+    
+.boton:hover{
+    background-color: #a64f65;
+    color: #fff;
+}
+
+@media(max-width:990px){
+    
+    .menu{
+        padding: 30px;
+        margin: 0;
+    }
+
+    .menuIcon{
+        display: initial;
+    }
+
+    .menu{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #323337;
+        display: none;
+    }
+
+    .item{
+        margin: 0 0 20px 0;
+        width: 100%;
+    }
+
+    .btnPerfil{
+        width: 100%;
+    }
+
+/* para aparecer el menu */
+    #menu:checked ~ .menu{
+        display: initial;
+    }
+
+}
+

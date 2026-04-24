@@ -1,0 +1,72 @@
+
+body {
+  
+  font-size: 14px;
+  color: #444444;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+
+.sidebar {
+ display: block;
+ box-shadow: none;
+ background: #fff; 
+ }
+
+.sidebar ul.nav a:hover, .sidebar ul.nav li.parent ul li a:hover {
+  text-decoration: none;
+  background-color: #6E152E;
+  color: #fff; 
+}
+
+.nav-link{
+  color: #161a1d;
+}
+
+@media (min-width: 768px) {
+
+  .sidebar {
+    display: block;
+    position: fixed;
+    top: 100px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto; }
+
+  .navbar-header {
+    width: 100%; } 
+}
+
+.profile-sidebar {
+  padding: 10px 0;
+  border-bottom: 1px solid #e9ecf2; }
+
+.profile-userpic img {
+  float: left;
+  margin: 10px 0px 0px 15px;
+  width: 55px;
+  height: 55px;
+  border-radius: 9999px !important; }
+
+.profile-usertitle {
+  float: left;
+  text-align: left;
+  margin: 10px 0 0 12px; }
+
+.profile-usertitle-name {
+  font-size: 12px;
+  margin-bottom: 0px; }
+
+.profile-usertitle-status {
+  text-transform: uppercase;
+  color: #AAA;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px; }
+
+  .divider, .clear {
+  clear: both; }
