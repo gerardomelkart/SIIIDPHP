@@ -43,10 +43,10 @@ class ConActualizar extends CI_Controller{
 	}
 
 
-	public function AdminConfig($habCargaInfo, $habModifInfo){
+	public function AdminConfig($habCargaInfo, $habModifInfo, $habDesaparecidosInfo){
 
 
-         $ActAdminConfig = $this->ModActualizaDatos->ActualizaAdminConfig($habCargaInfo, $habModifInfo);
+         $ActAdminConfig = $this->ModActualizaDatos->ActualizaAdminConfig($habCargaInfo, $habModifInfo, $habDesaparecidosInfo);
 
          if(!empty($ActAdminConfig)){  
 					

@@ -41,11 +41,12 @@ class ModActualizaDatos extends CI_Model{
 	}
 
 
-	public function ActualizaAdminConfig($habCargaInfo, $habModifInfo){
+	public function ActualizaAdminConfig($habCargaInfo, $habModifInfo, $habDesaparecidosInfo){
 
 		return $this->db->query("UPDATE tbl_admin_config
 									SET hab_carga_info = $habCargaInfo,
-									    hab_modifica_info = $habModifInfo ");
+									    hab_modifica_info = $habModifInfo,
+									    hab_modulo_desaparecidos = $habDesaparecidosInfo ");
 	}
 
 

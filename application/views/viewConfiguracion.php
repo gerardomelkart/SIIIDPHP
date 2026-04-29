@@ -76,6 +76,26 @@
 						</div>
 					</div>
 				</div>
+
+				<div class="row text-left">
+					<div class="col-md-6">
+						<div class="form-check">
+						    <input class="form-check-input" type="checkbox" value="" id="chkHabDesaparecidosInfo" name="chkHabDesaparecidosInfo" <?php 
+    							if( $valoresConfig[0]->hab_modulo_desaparecidos == 1) { 
+								        echo 'checked="checked"'; 
+								    } 
+								?>>
+						    <label class="form-check-label" for="chkHabDesaparecidosInfo"> 
+						        Habilitar módulo de desaparecidos
+						    </label>
+						</div>
+					</div>
+				</div>
+
+
+
+
+
 		
 
 			<br>	
@@ -108,9 +128,10 @@
 
 		   var chkHabCargaInfo = $("#chkHabCargaInfo").is(":checked") ? 1 : 0;
 		   var chkHabModifInfo = $("#chkHabModifInfo").is(":checked") ? 1 : 0;
+		   var chkHabDesaparecidosInfo = $("#chkHabDesaparecidosInfo").is(":checked") ? 1 : 0;
 
 
-			ejecutaPeticionAjaxCargaSeccionID("POST","../../ConActualizar/AdminConfig/" +chkHabCargaInfo +'/' +chkHabModifInfo, "contenedorGeneral")
+			ejecutaPeticionAjaxCargaSeccionID("POST","../../ConActualizar/AdminConfig/" +chkHabCargaInfo +'/' +chkHabModifInfo +'/' +chkHabDesaparecidosInfo, "contenedorGeneral")
 
 		    ejecutaPeticionAjaxCargaSeccion("../../ConSeleccionador/CargaVistaConfiguracion","contenedorGeneral");
 

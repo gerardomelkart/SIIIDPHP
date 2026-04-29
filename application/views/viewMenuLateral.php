@@ -153,9 +153,6 @@
 <?php  } ?>
 
 
-
-
-
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#menu-informes">
                 <i class="fa fa-navicon"></i> Informes <i class="fa fa-plus float-right"></i>
@@ -184,6 +181,9 @@
             <a id="btnCerrarSesion" class="nav-link" style="cursor:pointer;"><i class="fa fa-power-off"></i> Cerrar Sesión</a>
         </li>
     </ul>
+
+
+    
 <?php  } ?>
 
 <?php  if($this->session->rol == 2) { ?>
