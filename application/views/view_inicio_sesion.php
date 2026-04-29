@@ -6,6 +6,7 @@
     <title>Inicio de Sesión</title>
 
     <link rel="stylesheet" href="public/css/styleLogin.css">
+    <link rel="shortcut icon" href="https://www.gob.mx/resources/img/favicon.ico">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="public/js/funciones.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
