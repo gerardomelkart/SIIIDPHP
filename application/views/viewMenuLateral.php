@@ -71,6 +71,12 @@
     transition: height 0.2s ease;
 }
 
+.nav-link,
+.nav-link i,
+.nav-link span {
+    cursor: pointer;
+}
+
 </style>
 
 
@@ -268,6 +274,18 @@
         ejecutaPeticionAjaxCargaSeccion("../../ConSeleccionador/CargaVistaActualizarInf", "contenedorGeneral");
     }) 
     
+
+
+
+
+
+
+
+
+
+
+
+
 
     /*PETICION  PARA OPCION DE CONSULTAR ENVIOS Y REIMPRIMIR ACUSE perfil: Administrador(todos) y Operador(solo sus registros)*/
     $("#btnConsultaEnvios").click(function(){

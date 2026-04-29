@@ -13,6 +13,7 @@
 <body>
 
   <header id="Header">
+    <link rel="shortcut icon" href="https://www.gob.mx/resources/img/favicon.ico">
     <img src="../public/img/LogoSEGURIDAD2.png" class="logo" alt="">  
     <input type="checkbox" id="menu" />
     <label class="menuIcon" for="menu">
