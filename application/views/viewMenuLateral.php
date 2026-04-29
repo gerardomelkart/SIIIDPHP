@@ -27,6 +27,37 @@
 <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script> <!-- librerias para el boton de imprmir en las tablas  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script> <!-- librerias para el boton de excel en las tablas  -->
 
+<style>
+.icon-desaparecidos {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+}
+
+.icon-desaparecidos i {
+    font-size: 16px;
+}
+
+.icon-desaparecidos .icon-overlay {
+    position: absolute;
+    bottom: -2px;
+    right: -6px;
+    font-size: 10px;
+}
+
+.icon-desaparecidos.small i {
+    font-size: 14px;
+}
+
+.icon-desaparecidos.small .icon-overlay {
+    font-size: 8px;
+    bottom: -2px;
+    right: -5px;
+}
+</style>
+
+
+
 
 
 
@@ -72,15 +103,28 @@
 <?php  if($this->session->HabModuloDesaparecidos == 1) { ?> 
 
 
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#menu-desaparecidos">
-                <i class="fa fa-navicon"></i> Desaparecidos <i class="fa fa-plus float-right"></i>
-            </a>
-            <ul class="nav flex-column collapse" id="menu-desaparecidos">
-                <li class="nav-item"><a id="btnConsultaDesaparecidos" class="nav-link" ><i class="fa fa-circle-question"></i> Carga Desaparecidos</a></li>
-            </ul>
-        </li>
+<li class="nav-item">
+    <a class="nav-link" data-toggle="collapse" href="#menu-desaparecidos">
+        <span class="icon-desaparecidos">
+            <i class="fa fa-user"></i>
+            <i class="fa fa-circle-question icon-overlay"></i>
+        </span>
+        Desaparecidos 
+        <i class="fa fa-plus float-right"></i>
+    </a>
 
+    <ul class="nav flex-column collapse" id="menu-desaparecidos">
+        <li class="nav-item">
+            <a id="btnConsultaDesaparecidos" class="nav-link">
+                <span class="icon-desaparecidos small">
+                    <i class="fa fa-user"></i>
+                    <i class="fa fa-circle-question icon-overlay"></i>
+                </span>
+                Carga Desaparecidos
+            </a>
+        </li>
+    </ul>
+</li>
 
 <?php  } ?>
 
