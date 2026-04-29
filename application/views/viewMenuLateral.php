@@ -31,18 +31,32 @@
 
 <!-- estilos para modulo de desaparecidos, se podria mover despues a un archivo css para mantener el orden y limpieza del codigo, pero por ahora lo dejo aqui para que se apliquen los estilos de inmediato al cargar el menu lateral, ya que es un modulo nuevo y no quiero que se me olvide agregarlo al css despues. -->
 <style>
+
+#menu-desaparecidos .nav-item {
+    display: block;
+    width: 100%;
+}
+
+#menu-desaparecidos .nav-link {
+    display: flex;
+    align-items: center;
+}
+
+#menu-desaparecidos.collapsing {
+    transition: height 0.08s linear !important;
+}
+
+/* Mantiene estable el icono con overlay */
 .icon-menu {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
     width: 20px;
-    height: 16px;
-    line-height: 16px;
     margin-right: 4px;
-    vertical-align: middle;
 }
 
-.icon-menu .fa-user {
-    font-size: 15px;
-}
-
+/* Badges (?, upload, refresh) */
 .icon-badge-question,
 .icon-badge-upload,
 .icon-badge-refresh {
@@ -52,17 +66,11 @@
     font-size: 8px;
 }
 
-.icon-badge-question {
-    font-size: 8px;
+/* Suaviza la animación del collapse */
+.collapse {
+    transition: height 0.2s ease;
 }
 
-.icon-badge-upload {
-    font-size: 8px;
-}
-
-.icon-badge-refresh {
-    font-size: 8px;
-}
 </style>
 
 
