@@ -37,7 +37,7 @@
         <form  id="loginform">
             <div class="username">
                 <input type="text" name="txtusuario" id="txtusuario" required>
-                <label>Nombre de Usuariooo</label>
+                <label>Nombre de Usuario</label>
             </div>
             <div class="contrasena">
                 <input type="password" name="txtcontrasena" id="txtcontrasena" required>

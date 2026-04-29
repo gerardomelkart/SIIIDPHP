@@ -48,7 +48,7 @@
     </div>
     <div class="divider"></div>
 
-<?php  if($this->session->rol == 1) { ?>
+<?php  if($this->session->rol == 1) { ?> 
 
 
     <ul class="nav flex-column">
@@ -59,15 +59,34 @@
         <li class="nav-item">
                 <a id="btnIrEnviarInf" class="nav-link" style="cursor:pointer;"><i class="fa fa-upload"></i> Integrar Información</a>
         </li>
-<?php  }  ?>     
-
- <!-- Verificar si esta habilitada la opcion para actualizaciones o modificaciones-->        
+<?php  }  ?>          
 <?php  if($this->session->HabModifInfo == 1) { ?> 
         <li class="nav-item">
                 <a id="btnIrActualizarInf" class="nav-link" style="cursor:pointer;"><i class="fa fa-refresh"></i> Actualizar Información</a>
         </li>
 <?php  } ?>
-        
+
+
+
+
+<?php  if($this->session->HabModuloDesaparecidos == 1) { ?> 
+
+
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#menu-desaparecidos">
+                <i class="fa fa-navicon"></i> Desaparecidos <i class="fa fa-plus float-right"></i>
+            </a>
+            <ul class="nav flex-column collapse" id="menu-desaparecidos">
+                <li class="nav-item"><a id="btnConsultaDesaparecidos" class="nav-link" ><i class="fa fa-circle-question"></i> Carga Desaparecidos</a></li>
+            </ul>
+        </li>
+
+
+<?php  } ?>
+
+
+
+
 
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#menu-informes">
