@@ -108,17 +108,33 @@
     <ul class="nav flex-column">
 
 
-<!-- Verificar si esta habilitada la opcion para la carga -->        
-<?php  if($this->session->HabCargaInfo == 1) {  ?>
-        <li class="nav-item">
-                <a id="btnIrEnviarInf" class="nav-link" style="cursor:pointer;"><i class="fa fa-upload"></i> Integrar Información</a>
-        </li>
-<?php  }  ?>          
-<?php  if($this->session->HabModifInfo == 1) { ?> 
-        <li class="nav-item">
-                <a id="btnIrActualizarInf" class="nav-link" style="cursor:pointer;"><i class="fa fa-refresh"></i> Actualizar Información</a>
-        </li>
-<?php  } ?>
+<!-- Modulo incidencia delictiva -->        
+<li class="nav-item">
+    <a class="nav-link" data-toggle="collapse" href="#menu-incidencia">
+        <i class="fa fa-folder"></i> Incidencia Delictiva
+        <i class="fa fa-plus float-right"></i>
+    </a>
+
+    <ul class="nav flex-column collapse" id="menu-incidencia">
+
+        <?php if($this->session->HabCargaInfo == 1): ?>
+            <li class="nav-item">
+                <a id="btnIrEnviarInf" class="nav-link">
+                    <i class="fa fa-upload"></i> Integrar Información
+                </a>
+            </li>
+        <?php endif; ?>
+
+        <?php if($this->session->HabModifInfo == 1): ?>
+            <li class="nav-item">
+                <a id="btnIrActualizarInf" class="nav-link">
+                    <i class="fa fa-refresh"></i> Actualizar Información
+                </a>
+            </li>
+        <?php endif; ?>
+
+    </ul>
+</li>
 
 
 
