@@ -69,9 +69,14 @@
 
 		<div class="card mt-3" style="border:none; background-color: #fff; ">
 
-			<p class="card-header text-white font-weight-bold text-left" id="titulo" style="background: #98989A; font-size: 20px;"><i class="fa fa-upload"></i> Carga de información, de desaparecidos  </p>
+            <p class="card-header text-white font-weight-bold text-left" id="titulo" style="background: #98989A; font-size: 20px;">
+                <span class="icon-desaparecidos-header">
+                    <i class="fa fa-user"></i>
+                    <i class="fa fa-circle-question icon-overlay-header"></i>
+                </span>
+                    Carga de información, de Desaparecidos
+            </p>
 			
-
 				<form id="formUploadFiles" class="formUploadFiles" enctype="multipart/form-data">
 
 					<div class="row">
@@ -127,8 +132,8 @@
 							<div class="row text-center justify-content-center">
 
 								<div class="col-12 col-sm-6 col-md-4 mb-3">
-									<a href="../public/Documentos/plantillas/EE_2025MM_carpetas.xlsx"
-									download="EE_2025MM_carpetas.xlsx"
+									<a href="../public/Documentos/plantillas/ExpedientesDesaparecidos.xlsx"
+									download="ExpedientesDesaparecidos.xlsx"
 									title="Descargar Plantilla Expedientes">
 									<img src="../public/img/logo_XLSX.png" class="img-fluid" style="max-height: 80px;" alt="Plantilla Carpetas">
 								</a>
@@ -136,8 +141,8 @@
 							</div>
 
 							<div class="col-12 col-sm-6 col-md-4 mb-3">
-								<a href="../public/Documentos/plantillas/EE_2025MM_delitos.xlsx"
-								download="EE_2025MM_delitos.xlsx"
+								<a href="../public/Documentos/plantillas/DelitosDesaparecidos.xlsx"
+								download="DelitosDesaparecidos.xlsx"
 								title="Descargar Plantilla Delitos">
 								<img src="../public/img/logo_XLSX.png" class="img-fluid" style="max-height: 80px;" alt="Plantilla Delitos">
 							</a>
@@ -145,8 +150,8 @@
 						</div>
 
 						<div class="col-12 col-sm-6 col-md-4 mb-3">
-							<a href="../public/Documentos/plantillas/EE_2025MM_victimas.xlsx"
-							download="EE_2025MM_victimas.xlsx"
+							<a href="../public/Documentos/plantillas/VictimasDesaparecidos.xlsx"
+							download="VictimasDesaparecidos.xlsx"
 							title="Descargar Plantilla Victimas">
 							<img src="../public/img/logo_XLSX.png" class="img-fluid" style="max-height: 80px;" alt="Plantilla Victimas">
 						</a>
