@@ -81,16 +81,7 @@
 }
 
 </style>
-
-
-
-
-
-
-    <title></title>
-
-
-
+<title></title>
 <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
     <div class="profile-sidebar">
         <div class="profile-userpic">
@@ -107,13 +98,10 @@
 
 <?php  if($this->session->rol == 1) { ?> 
 
-
-    <ul class="nav flex-column">
+<ul class="nav flex-column">
 
 
 <!-- Modulo incidencia delictiva -->        
-
-
 <?php if($this->session->HabCargaInfo == 1 || $this->session->HabModifInfo == 1): ?>
 <li class="nav-item">
     <a class="nav-link" data-toggle="collapse" href="#menu-incidencia">
@@ -142,8 +130,6 @@
     </ul>
 </li>
 <?php endif; ?>
-
-
 
 <!-- modulo de desaparecidos -->
 <?php  if($this->session->HabModuloDesaparecidos == 1) { ?> 
@@ -179,9 +165,10 @@
         </li>
     </ul>
 </li>
+
+
+
 <?php  } ?>
-
-
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#menu-informes">
                 <i class="fa fa-navicon"></i> Informes <i class="fa fa-plus float-right"></i>
@@ -210,9 +197,6 @@
             <a id="btnCerrarSesion" class="nav-link" style="cursor:pointer;"><i class="fa fa-power-off"></i> Cerrar Sesión</a>
         </li>
     </ul>
-
-
-    
 <?php  } ?>
 
 <?php  if($this->session->rol == 2) { ?>
@@ -250,7 +234,6 @@
         </li>
     </ul>
 <?php  } ?>
-
 <?php  if($this->session->rol == 3) { ?>
 
 
@@ -295,20 +278,21 @@
     $("#btnIrActualizarInf").click(function(){
 
         ejecutaPeticionAjaxCargaSeccion("../../ConSeleccionador/CargaVistaActualizarInf", "contenedorGeneral");
-    }) 
+    })
     
 
 
+    // ACA NOS QUEDAMOS POR AQUI
+    /*PETICION  PARA OPCION DE CARGA DE DESAPARECIDOS*/
+    $("#btnCargaDesaparecidos").click(function(){
+
+        ejecutaPeticionAjaxCargaSeccion("../../ConSeleccionador/CargaVistaCargaDesaparecidos", "contenedorGeneral");
+    }) 
 
 
 
 
-
-
-
-
-
-
+    
 
     /*PETICION  PARA OPCION DE CONSULTAR ENVIOS Y REIMPRIMIR ACUSE perfil: Administrador(todos) y Operador(solo sus registros)*/
     $("#btnConsultaEnvios").click(function(){

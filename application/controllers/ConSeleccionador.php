@@ -169,6 +169,7 @@ Class ConSeleccionador extends CI_Controller{
 	}
 
 
+	// incidencia delictiva
 	public function CargaVistaEnviarInf(){
 	    
 		$this->load->view("viewCargaDeInformacion");
@@ -178,6 +179,23 @@ Class ConSeleccionador extends CI_Controller{
 	    
 		$this->load->view("viewActualizarInformacion");
 	}
+
+
+	public function CargaVistaCargaDesaparecidos()
+	{
+	    
+		$this->load->view("viewCargaDesaparecidos");
+	}
+
+	public function CargaVistaActualizaDesaparecidos(){
+	    
+		$this->load->view("viewActualizaDesaparecidos");
+	}
+
+
+
+
+
 
 	
 	public function CargaVistaConsultaEnvios(){
