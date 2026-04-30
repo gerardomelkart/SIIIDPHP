@@ -56,6 +56,27 @@
 		}
 
 
+        .icon-header 
+        {
+            width: 24px;
+            height: 20px;
+            margin-right: 6px;
+            color: inherit;
+        }
+
+        .icon-header .fa-user  
+        {
+            font-size: 18px;
+        }
+
+        .icon-header .icon-badge-upload 
+        {
+            right: -1px;
+            bottom: -3px;
+            font-size: 9px;
+        }
+
+
 	</style>
 
 
@@ -70,11 +91,11 @@
 		<div class="card mt-3" style="border:none; background-color: #fff; ">
 
             <p class="card-header text-white font-weight-bold text-left" id="titulo" style="background: #98989A; font-size: 20px;">
-                <span class="icon-desaparecidos-header">
+                <span class="icon-menu icon-header">
                     <i class="fa fa-user"></i>
-                    <i class="fa fa-circle-question icon-overlay-header"></i>
+                    <i class="fa fa-upload icon-badge-upload"></i>
                 </span>
-                    Carga de información, de Desaparecidos
+                Carga de información, de Desaparecidos
             </p>
 			
 				<form id="formUploadFiles" class="formUploadFiles" enctype="multipart/form-data">
