@@ -282,17 +282,18 @@
     
 
 
-    // ACA NOS QUEDAMOS POR AQUI
     /*PETICION  PARA OPCION DE CARGA DE DESAPARECIDOS*/
     $("#btnCargaDesaparecidos").click(function(){
 
         ejecutaPeticionAjaxCargaSeccion("../../ConSeleccionador/CargaVistaCargaDesaparecidos", "contenedorGeneral");
     }) 
 
+    /*PETICION  PARA OPCION DE ACTUALIZACION DE DESAPARECIDOS*/
+    $("#btnActualizaDesaparecidos").click(function(){
 
+        ejecutaPeticionAjaxCargaSeccion("../../ConSeleccionador/CargaVistaActualizaDesaparecidos", "contenedorGeneral");
+    })
 
-
-    
 
     /*PETICION  PARA OPCION DE CONSULTAR ENVIOS Y REIMPRIMIR ACUSE perfil: Administrador(todos) y Operador(solo sus registros)*/
     $("#btnConsultaEnvios").click(function(){
