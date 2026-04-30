@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="shortcut icon" href="https://www.gob.mx/resources/img/favicon.ico">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
@@ -13,7 +14,7 @@
 <body>
 
   <header id="Header">
-    <link rel="shortcut icon" href="https://www.gob.mx/resources/img/favicon.ico">
+    
     <img src="../public/img/LogoSEGURIDAD2.png" class="logo" alt="">  
     <input type="checkbox" id="menu" />
     <label class="menuIcon" for="menu">
@@ -22,7 +23,7 @@
     <ul class="menu">
      <!--  <li class="item">Inicio</li>
       <li class="item">Servicios</li> -->
-      <li class="btnPerfil">Perfil</li>
+      <!-- <li class="btnPerfil">Perfil</li> -->
     </ul>
   </header>
 </body>

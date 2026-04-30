@@ -12,12 +12,9 @@ use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Shared\Date;
 use PhpOffice\PhpSpreadsheet\Settings;
 
-
-
-
-
 // CODIFICACION
-	function codificarUTF8(array $data): array{
+	function codificarUTF8(array $data): array
+	{
 		$resultado = [];
 		foreach($data as $clave => $valor){
 			if(!mb_check_encoding($valor,'UTF-8')){
@@ -27,7 +24,6 @@ use PhpOffice\PhpSpreadsheet\Settings;
 		}
 		return $resultado;
 	}
-
 
 Class ConUploadFiles extends CI_Controller{
 
@@ -45,10 +41,6 @@ Class ConUploadFiles extends CI_Controller{
 		
 
 	}
-
-
-	
-
 
 	public function verUploads($proceso = null)
 	{
@@ -85,18 +77,8 @@ Class ConUploadFiles extends CI_Controller{
 	    }
 	}
 
-
-
-
-	public function Uploads($proceso){
-
-		/*log_message('debug',">>> ENTRÓ A LA FUNCIÓN Uploads");
-
-		foreach ($_FILES as $key => $file) {
-		    log_message('debug',"Archivo recibido [$key]: tamaño = {$file['size']} bytes, nombre = {$file['name']}");
-		}
-		*/
-
+	public function Uploads($proceso)
+	{
 		$arregloFormulario = $this->input->post();
 
 		if($proceso=='Actualizaciones'){ // si es una actualizacion o modificacion, recibimos los valores del año y mes de corte
@@ -178,7 +160,8 @@ Class ConUploadFiles extends CI_Controller{
 			}
 
 
-			if ($todosCorrectos == 'correcto') {
+			if ($todosCorrectos == 'correcto') 
+			{
 			    
 
 				$codigoRef = uniqid(); // creamos Un ID único para referencia de los registros enviados
@@ -207,7 +190,9 @@ Class ConUploadFiles extends CI_Controller{
 
 
 
-			} else { // en caso de que algun arcchivo este incorrecto, borramos del repositorio "tmpCSV" los 3 archivos que se cargaron
+			} 
+			else 
+			{ // en caso de que algun arcchivo este incorrecto, borramos del repositorio "tmpCSV" los 3 archivos que se cargaron
 			    foreach ($archivos as $archivo) {
 			    	//log_message('debug', 'Ruta completa del archivo: ' . $archivo['full_path']);
 			    	unlink($archivo['full_path']);
@@ -218,8 +203,8 @@ Class ConUploadFiles extends CI_Controller{
                     
     }
 
-
-    private function validaEstructura($path, $nameArch){
+    private function validaEstructura($path, $nameArch)
+	{
 
     	// Leer encabezados del CSV
 	    $csv = fopen($path, 'r');
@@ -317,15 +302,7 @@ Class ConUploadFiles extends CI_Controller{
 
 	}
 
-
-    //print_r($headersArch);
-    //print_r($table_columns);
-
     }
-
-
-
-   
 
     private function read_csv($path, $codigoRef, $proceso, $anioCorte, $mesCorte) {
     	//date_default_timezone_set('America/Mexico_City');
@@ -401,10 +378,8 @@ Class ConUploadFiles extends CI_Controller{
 	    return $data;
 	}
 
-
-
-
-    public function insert_tmp($codigoRef,$proceso,$anioCorte,$mesCorte) {
+    public function insert_tmp($codigoRef,$proceso,$anioCorte,$mesCorte) 
+	{
         // Obtener datos de sesión
         $csv_data = $this->session->userdata('csv_data');
         $codigoReferencia = $codigoRef;
@@ -814,8 +789,7 @@ Class ConUploadFiles extends CI_Controller{
 	        		
 	            } //fin validacion $obtDatosValIntegridad 
 
-//$anioCorte = $this->session->anio_corte;
-//$mesCorte = $this->session->mes_corte;
+
 
 	        	$obtDatos = $this->ModSeleccionarDatos->ValidarDatosArchCarpetasInv($codigoReferencia, $proceso, $anioCorte, $mesCorte);
 	        	$cod_ref = $obtDatos[0]->codigo_referencia;
@@ -1302,7 +1276,7 @@ Class ConUploadFiles extends CI_Controller{
 							</table>			
 						</div>
 
-<!-- TABLA DELITOS  -->
+               <!-- TABLA DELITOS  -->
 							<div class='card mt-5' style='border:none; background-color: #fff;'>
 							<p class='card-header text-white font-weight-bold text-left' id='titulo' style='background: #691C32;'>Validacion archivo Delitos </p>
 							<table class='tblCarpetas'>
@@ -2027,7 +2001,7 @@ Class ConUploadFiles extends CI_Controller{
 							</table>			
 						</div>
 
-<!-- TABLA VICTIMAS  -->
+             <!-- TABLA VICTIMAS  -->
 							<div class='card mt-5' style='border:none; background-color: #fff;'>
 							<p class='card-header text-white font-weight-bold text-left' id='titulo' style='background: #691C32;'>Validacion archivo Victimas </p>
 							<table class='tblCarpetas'>
@@ -2524,8 +2498,8 @@ Class ConUploadFiles extends CI_Controller{
         
     }
 
-
-    public function cargarDatos(){
+    public function cargarDatos()
+	{
     	$cod_ref = $this->input->get('codigo');
 		$proceso = $this->input->get('proceso');
 		//log_message('debug','Entrando a CargarDatos /////////////////////////////');
@@ -2647,7 +2621,6 @@ Class ConUploadFiles extends CI_Controller{
     	}
     }
 
-
     public function rechazarDatos(){
     	$cod_ref = $this->input->get('codigo');
 		$proceso = $this->input->get('proceso');
@@ -2677,8 +2650,7 @@ Class ConUploadFiles extends CI_Controller{
     	echo "Success";
     }
 
-
-    	private function xlsx2csv($file)
+    private function xlsx2csv($file)
 	{
 	    $extension = strtolower(pathinfo($file['file_name'], PATHINFO_EXTENSION));
 
@@ -2805,17 +2777,6 @@ Class ConUploadFiles extends CI_Controller{
 	        return false;
 	    }
 	}
-
-	
-
-
-
-
-
-		
-
-
-
 }
 
 
