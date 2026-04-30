@@ -32,18 +32,21 @@
 <!-- estilos para modulo de desaparecidos, se podria mover despues a un archivo css para mantener el orden y limpieza del codigo, pero por ahora lo dejo aqui para que se apliquen los estilos de inmediato al cargar el menu lateral, ya que es un modulo nuevo y no quiero que se me olvide agregarlo al css despues. -->
 <style>
 
-#menu-desaparecidos .nav-item {
+#menu-desaparecidos .nav-item,
+#menu-incidencia .nav-item {
     display: block;
     width: 100%;
 }
 
-#menu-desaparecidos .nav-link {
+#menu-desaparecidos .nav-link,
+#menu-incidencia .nav-link {
     display: flex;
     align-items: center;
 }
 
-#menu-desaparecidos.collapsing {
-    transition: height 0.08s linear !important;
+#menu-desaparecidos.collapsing,
+#menu-incidencia.collapsing {
+    transition: height 0.18s ease-in-out !important;
 }
 
 /* Mantiene estable el icono con overlay */
@@ -109,6 +112,9 @@
 
 
 <!-- Modulo incidencia delictiva -->        
+
+
+<?php if($this->session->HabCargaInfo == 1 || $this->session->HabModifInfo == 1): ?>
 <li class="nav-item">
     <a class="nav-link" data-toggle="collapse" href="#menu-incidencia">
         <i class="fa fa-folder"></i> Incidencia Delictiva
@@ -135,6 +141,7 @@
 
     </ul>
 </li>
+<?php endif; ?>
 
 
 
