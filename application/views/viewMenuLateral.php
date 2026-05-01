@@ -142,7 +142,7 @@
 
 
                     <ul class="nav flex-column collapse" id="menu-desaparecidos">
-                        <?php if ($this->session->HabCargaDesaparecidos == 1): ?>
+                        <?php if ($this->session->HabModuloDesaparecidos == 1): ?>
                         <li class="nav-item">
                             <a id="btnCargaDesaparecidos" class="nav-link">
                                 <span class="fa-stack icon-menu">
