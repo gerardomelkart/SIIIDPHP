@@ -63,6 +63,7 @@ Class ConAutenticacion extends CI_Controller{
 	                $this->session->set_userdata("HabCargaInfo", $estatusConfig[0]->hab_carga_info);
 	                $this->session->set_userdata("HabModifInfo", $estatusConfig[0]->hab_modifica_info);
 	                $this->session->set_userdata("HabModuloDesaparecidos", $estatusConfig[0]->hab_modulo_desaparecidos);
+					$this->session->set_userdata("HabActualizacionDesaparecidos", $estatusConfig[0]->hab_modulo_actualizacion_desaparecidos);
 	            }
 
 	            $this->session->set_userdata("usuario", $usuario_bd->USUARIO);
@@ -104,6 +105,7 @@ Class ConAutenticacion extends CI_Controller{
 		$this->session->unset_userdata("HabCargaInfo");
 		$this->session->unset_userdata("HabModifInfo");
 		$this->session->unset_userdata("HabModuloDesaparecidos");
+		$this->session->unset_userdata("HabActualizacionDesaparecidos");
 		
 		$this->output
 			->set_content_type('application/json')
