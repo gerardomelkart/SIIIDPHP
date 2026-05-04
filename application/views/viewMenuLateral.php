@@ -103,7 +103,7 @@
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#menu-incidencia">
                         <i class="fa fa-folder"></i> Incidencia Delictiva
-                        <i class="fa fa-plus float-right"></i>
+                        
                     </a>
 
                     <ul class="nav flex-column collapse" id="menu-incidencia">
@@ -138,7 +138,7 @@
                             <i class="fa fa-circle-question icon-badge-question"></i>
                         </span>
                         Desaparecidos
-                        <i class="fa fa-plus float-right"></i>
+                        
                     </a>
 
 
@@ -181,7 +181,7 @@
             <li class="nav-item">
                 <a class="nav-link" data-toggle="collapse" href="#menu-informes">
                     <i class="fa fa-navicon"></i> Informes
-                    <i class="fa fa-plus float-right"></i>
+                    
                 </a>
 
                 <ul class="nav flex-column collapse" id="menu-informes">
@@ -190,18 +190,18 @@
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#menu-informes-incidencia">
                             <i class="fa fa-folder"></i> Incidencia Delictiva
-                            <i class="fa fa-plus float-right"></i>
+                            
                         </a>
 
                         <ul class="nav flex-column collapse" id="menu-informes-incidencia">
                             <li class="nav-item">
                                 <a id="btnConsultaEnvios" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i> Consultar Envíos
+                                    <i class="fa fa-arrow-right"></i> Consultar Envíos de incidencia delictiva
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a id="btnReporteCargas" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i> Reporte de Cargas
+                                    <i class="fa fa-arrow-right"></i> Reporte de Cargas de incidencia delictiva
                                 </a>
                             </li>
                         </ul>
@@ -215,18 +215,18 @@
                                 <i class="fa fa-circle-question icon-badge-question"></i>
                             </span>
                             Desaparecidos
-                            <i class="fa fa-plus float-right"></i>
+                            
                         </a>
 
                         <ul class="nav flex-column collapse" id="menu-informes-desaparecidos">
                             <li class="nav-item">
                                 <a id="btnConsultaEnviosDesaparecidos" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i> Consultar Envíos
+                                    <i class="fa fa-arrow-right"></i> Consultar Envíos de Desaparecidos
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a id="btnReporteCargasDesaparecidos" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i> Reporte de Cargas
+                                    <i class="fa fa-arrow-right"></i> Reporte de Cargas de Desaparecidos
                                 </a>
                             </li>
                         </ul>
@@ -243,7 +243,7 @@
 
             <li class="nav-item">
                 <a class="nav-link" data-toggle="collapse" href="#menu-catalogos">
-                    <i class="fa fa-book"></i> Catálogos <i class="fa fa-plus float-right"></i>
+                    <i class="fa fa-book"></i> Catálogos 
                 </a>
                 <ul class="nav flex-column collapse" id="menu-catalogos">
                     <li class="nav-item"><a id="btnIrRegUsuarios" class="nav-link" style="cursor:pointer;"><i class="fa fa-arrow-right"></i> Usuarios</a></li>
@@ -269,7 +269,7 @@
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#menu-incidencia">
                         <i class="fa fa-folder"></i> Incidencia Delictiva
-                        <i class="fa fa-plus float-right"></i>
+                        
                     </a>
 
                     <ul class="nav flex-column collapse" id="menu-incidencia">
@@ -304,7 +304,7 @@
                             <i class="fa fa-circle-question icon-badge-question"></i>
                         </span>
                         Desaparecidos
-                        <i class="fa fa-plus float-right"></i>
+                        
                     </a>
 
 
@@ -340,7 +340,7 @@
 
             <li class="nav-item">
                 <a class="nav-link" data-toggle="collapse" href="#menu-informes">
-                    <i class="fa fa-navicon"></i> Informes <i class="fa fa-plus float-right"></i>
+                    <i class="fa fa-navicon"></i> Informes 
                 </a>
                 <ul class="nav flex-column collapse" id="menu-informes">
                     <li class="nav-item"><a id="btnConsultaEnvios" class="nav-link"><i class="fa fa-arrow-right"></i> Consultar Envíos</a></li>
@@ -363,7 +363,7 @@
 
             <li class="nav-item">
                 <a class="nav-link" data-toggle="collapse" href="#menu-informes">
-                    <i class="fa fa-navicon"></i> Informes <i class="fa fa-plus float-right"></i>
+                    <i class="fa fa-navicon"></i> Informes 
                 </a>
                 <ul class="nav flex-column collapse" id="menu-informes">
                     <li class="nav-item"><a id="btnConsultaEnvios" class="nav-link"><i class="fa fa-arrow-right"></i> Consultar Envíos</a></li>
@@ -387,6 +387,14 @@
     $(document).ready(function() {
 
     });
+
+
+    //funcion para colapsar los submenus de informes al cerrar el menu principal de informes, para evitar que queden abiertos y se vea desordenado el menu lateral
+    $('#menu-informes').on('hide.bs.collapse', function () {
+        $('#menu-informes-incidencia').collapse('hide');
+        $('#menu-informes-desaparecidos').collapse('hide');
+    });
+
 
 
     /*PETICION  PARA OPCION DE ENVIAR O CARGAR REGISTROS perfil:Operador*/
