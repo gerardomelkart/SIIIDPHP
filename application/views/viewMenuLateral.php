@@ -30,20 +30,20 @@
 
 <!-- estilos para modulo de desaparecidos, se podria mover despues a un archivo css para mantener el orden y limpieza del codigo, pero por ahora lo dejo aqui para que se apliquen los estilos de inmediato al cargar el menu lateral, ya que es un modulo nuevo y no quiero que se me olvide agregarlo al css despues. -->
 <style>
-    #menu-desaparecidos .nav-item,
-    #menu-incidencia .nav-item {
+    .nav-item,
+    .nav-item {
         display: block;
         width: 100%;
     }
 
-    #menu-desaparecidos .nav-link,
-    #menu-incidencia .nav-link {
+    .nav-link,
+    .nav-link {
         display: flex;
         align-items: center;
     }
 
-    #menu-desaparecidos.collapsing,
-    #menu-incidencia.collapsing {
+    .collapsing,
+    .collapsing {
         transition: height 0.18s ease-in-out !important;
     }
 
@@ -176,7 +176,7 @@
 
 
 
-            
+
             <!-- modulo informes -->
             <li class="nav-item">
                 <a class="nav-link" data-toggle="collapse" href="#menu-informes">
@@ -189,7 +189,7 @@
                     <!-- Incidencia Delictiva (SIN CAMBIOS EN IDs) -->
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#menu-informes-incidencia">
-                            <i class="fa fa-chart-bar"></i> Incidencia Delictiva
+                            <i class="fa fa-folder"></i> Incidencia Delictiva
                             <i class="fa fa-plus float-right"></i>
                         </a>
 
