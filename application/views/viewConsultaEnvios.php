@@ -40,7 +40,7 @@
 
 					  <?php
 
-						foreach ($tablaConsultaEnvios as $dato){
+						foreach ($tablaConsultaEnvioss as $dato){
 
 					 ?>  
 							<tr style="font-size: 11px;">

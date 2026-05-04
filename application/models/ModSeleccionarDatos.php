@@ -508,7 +508,8 @@ class ModSeleccionarDatos extends CI_Model{
 										    WHEN 11 THEN concat('Noviembre', ' ', anio_corte)
 										    WHEN 12 THEN concat('Diciembre', ' ', anio_corte)
 										END AS mes_corte,
-										 concat(t2.nombre, ' ', t2.primer_apellido, ' ', t2.segundo_apellido) AS usuario_envio, t2.cve_estado, t3.nom_ent FROM tbl_carpetas t1
+										 concat(t2.nombre, ' ', t2.primer_apellido, ' ', t2.segundo_apellido) AS usuario_envio, t2.cve_estado, t3.nom_ent 
+										    FROM tbl_carpetas t1
 											JOIN usuarios t2 ON t1.usuario_reg = t2.USUARIO
 											JOIN cat_entidades t3 ON t2.cve_estado = t3.cve_ent
 											GROUP BY t1.usuario_reg, t1.codigo_referencia
