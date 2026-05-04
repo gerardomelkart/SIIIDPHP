@@ -384,23 +384,31 @@
 
 
 <script>
-    $(document).ready(function() {
+var cerrandoSubmenusInformes = false;
+
+$(document).ready(function () {
+
+    $('#menu-informes').on('hide.bs.collapse', function () {
+
+        if (cerrandoSubmenusInformes) {
+            return;
+        }
+
+        cerrandoSubmenusInformes = true;
+
+        $('#menu-informes-incidencia.show').collapse('hide');
+        $('#menu-informes-desaparecidos.show').collapse('hide');
+
+        setTimeout(function () {
+            cerrandoSubmenusInformes = false;
+        }, 300);
 
     });
 
+});
 
-    //funcion para colapsar los submenus de informes al cerrar el menu principal de informes, para evitar que queden abiertos y se vea desordenado el menu lateral
- $('#menu-informes').on('hide.bs.collapse', function () {
 
-        if ($('#menu-informes-incidencia').length) {
-            $('#menu-informes-incidencia').collapse('hide');
-        }
 
-        if ($('#menu-informes-desaparecidos').length) {
-            $('#menu-informes-desaparecidos').collapse('hide');
-        }
-
-    });
 
 
 
