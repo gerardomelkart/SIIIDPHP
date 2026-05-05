@@ -9,13 +9,9 @@
 <script src="../public/js/bootstrap.js"></script>
 <script src="../public/libs/Chart.min.js"></script>
 
-
-
 <!-- CSS -->
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
-
-
 
 <!-- JS -->
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
@@ -25,7 +21,6 @@
 <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script> <!-- librerias para el boton de imprmir en las tablas  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script> <!-- librerias para el boton de excel en las tablas  -->
-
 
 
 <!-- estilos para modulo de desaparecidos, se podria mover despues a un archivo css para mantener el orden y limpieza del codigo, pero por ahora lo dejo aqui para que se apliquen los estilos de inmediato al cargar el menu lateral, ya que es un modulo nuevo y no quiero que se me olvide agregarlo al css despues. -->
@@ -78,7 +73,9 @@
         cursor: pointer;
     }
 </style>
+
 <title></title>
+
 <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
     <div class="profile-sidebar">
         <div class="profile-userpic">
@@ -96,7 +93,6 @@
     <?php if ($this->session->rol == 1) { ?>
 
         <ul class="nav flex-column">
-
 
             <!-- modulo de carga de informacion -->
             <?php
@@ -199,12 +195,8 @@
             <li class="nav-item">
                 <a class="nav-link" data-toggle="collapse" href="#menu-informes">
                     <i class="fa fa-navicon"></i> Informes
-
                 </a>
-
                 <ul class="nav flex-column collapse" id="menu-informes">
-
-                    <!-- Incidencia Delictiva (SIN CAMBIOS EN IDs) -->
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#menu-informes-incidencia">
                             <i class="fa fa-folder"></i>&nbsp; Informes de Incidencia Delictiva
@@ -399,11 +391,6 @@
                                     <i class="fa fa-arrow-right"></i> Consultar Envíos de incidencia delictiva
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a id="btnReporteCargas" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i> Reporte de Cargas de incidencia delictiva
-                                </a>
-                            </li>
                         </ul>
                     </li>
 
@@ -422,11 +409,6 @@
                             <li class="nav-item">
                                 <a id="btnConsultaEnviosDesaparecidos" class="nav-link">
                                     <i class="fa fa-arrow-right"></i> Consultar Envíos de Desaparecidos
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a id="btnReporteCargasDesaparecidos" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i> Reporte de Cargas de Desaparecidos
                                 </a>
                             </li>
                         </ul>
@@ -470,11 +452,6 @@
                                     <i class="fa fa-arrow-right"></i> Consultar Envíos de incidencia delictiva
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a id="btnReporteCargas" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i> Reporte de Cargas de incidencia delictiva
-                                </a>
-                            </li>
                         </ul>
                     </li>
 
@@ -493,11 +470,6 @@
                             <li class="nav-item">
                                 <a id="btnConsultaEnviosDesaparecidos" class="nav-link">
                                     <i class="fa fa-arrow-right"></i> Consultar Envíos de Desaparecidos
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a id="btnReporteCargasDesaparecidos" class="nav-link">
-                                    <i class="fa fa-arrow-right"></i> Reporte de Cargas de Desaparecidos
                                 </a>
                             </li>
                         </ul>
@@ -607,9 +579,20 @@
         ejecutaPeticionAjaxCargaSeccion("../../ConSeleccionador/CargaVistaConsultaEnvios", "contenedorGeneral");
     })
 
-
     /*PETICION  PARA OPCION DE CONSULTAR REPORTE DE CARGAS POR ESTADO: Administrador*/
     $("#btnReporteCargas").click(function() {
+
+        ejecutaPeticionAjaxCargaSeccion("../../ConSeleccionador/CargaVistaReporteCargas", "contenedorGeneral");
+    })
+
+    /*PETICION  PARA OPCION DE CONSULTAR ENVIOS DE DESAPARECIDOS Y REIMPRIMIR ACUSE perfil: Administrador(todos) y Operador(solo sus registros)*/
+    $("#btnConsultaEnviosDesaparecidos").click(function() {
+
+        ejecutaPeticionAjaxCargaSeccion("../../ConSeleccionador/CargaVistaConsultaEnvios", "contenedorGeneral");
+    })
+
+    /*PETICION  PARA OPCION DE CONSULTAR REPORTE DE CARGAS DE DESAPARECIDOS POR ESTADO: Administrador*/
+    $("#btnReporteCargasDesaparecidos").click(function() {
 
         ejecutaPeticionAjaxCargaSeccion("../../ConSeleccionador/CargaVistaReporteCargas", "contenedorGeneral");
     })

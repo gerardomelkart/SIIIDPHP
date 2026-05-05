@@ -193,10 +193,6 @@ Class ConSeleccionador extends CI_Controller{
 	}
 
 
-
-
-
-
 	
 	public function CargaVistaConsultaEnvios(){
 
@@ -212,6 +208,25 @@ Class ConSeleccionador extends CI_Controller{
 		$this->load->view("viewReporteCargas", $data);
 
 	}
+
+
+
+	// necesitamos los datos para implementar estas dos funciones y seguir el flujo
+	public function CargaVistaConsultaEnviosDesaparecidos(){
+
+		$usuario = $this->session->usuario;
+		$rol = $this->session->rol;
+		//$data['tablaConsultaEnvios'] = $this->ModSeleccionarDatos->ConsultarEnvios($usuario,$rol);
+		//$this->load->view("viewConsultaEnvios", $data);
+		$this->load->view("viewConsultaEnviosDesaparecidos");
+	}
+	public function CargaVistaReporteCargasDesaparecidos(){
+	
+		//$data['tablaRptCargas'] = $this->ModSeleccionarDatos->ConsultarRptCargas($usuario,$mes_carga);
+		//$this->load->view("viewReporteCargas", $data);
+        $this->load->view("viewReporteCargasDesaparecidos");
+	}
+
 
 
 
