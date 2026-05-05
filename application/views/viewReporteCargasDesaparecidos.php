@@ -26,7 +26,7 @@
 
 
 	
-		<p class="card-header text-white font-weight-bold text-left" style="background: #98989A; font-size: 20px;"><i class="fa fa-search"></i> Reporte de Cargas por Estado </p>
+		<p class="card-header text-white font-weight-bold text-left" style="background: #98989A; font-size: 20px;"><i class="fa fa-search"></i> Reporte de Cargas de desaparecidos por Estado </p>
 
 
 			<div class="card mt-5" style="border:none; background-color: #fff; ">

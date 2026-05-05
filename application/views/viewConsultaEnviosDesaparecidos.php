@@ -17,7 +17,7 @@
 
 
 
-		<p class="card-header text-white font-weight-bold text-left" id="titulo" style="background: #98989A; font-size: 20px;"><i class="fa fa-search"></i> Consulta Envios </p>
+		<p class="card-header text-white font-weight-bold text-left" id="titulo" style="background: #98989A; font-size: 20px;"><i class="fa fa-search"></i> Consulta Envios de Desaparecidos</p>
 
 
 		<div class="card mt-5" style="border:none; background-color: #fff; ">
