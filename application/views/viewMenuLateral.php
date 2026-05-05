@@ -401,28 +401,57 @@ if (
 
 
 <script>
-var cerrandoSubmenusCargaInformacion = false;
+    var cerrandoSubmenusInformes = false;
+    var cerrandoSubmenusCargaInformacion = false;
 
-$(document).ready(function () {
+    $(document).ready(function () {
 
-    $('#menu-carga-informacion').on('hide.bs.collapse', function () {
+        // Cerrar submenús internos cuando se cierre Carga de Información
+        $('#menu-carga-informacion').on('hide.bs.collapse', function (e) {
 
-        if (cerrandoSubmenusCargaInformacion) {
-            return;
-        }
+            // Evita que el evento de un submenú interno dispare este bloque
+            if (e.target !== this) {
+                return;
+            }
 
-        cerrandoSubmenusCargaInformacion = true;
+            if (cerrandoSubmenusCargaInformacion) {
+                return;
+            }
 
-        $('#menu-incidencia.show').collapse('hide');
-        $('#menu-desaparecidos.show').collapse('hide');
+            cerrandoSubmenusCargaInformacion = true;
 
-        setTimeout(function () {
-            cerrandoSubmenusCargaInformacion = false;
-        }, 300);
+            $('#menu-incidencia.show').collapse('hide');
+            $('#menu-desaparecidos.show').collapse('hide');
+
+            setTimeout(function () {
+                cerrandoSubmenusCargaInformacion = false;
+            }, 300);
+        });
+
+
+        // Cerrar submenús internos cuando se cierre Informes
+        $('#menu-informes').on('hide.bs.collapse', function (e) {
+
+            // Evita que el evento de un submenú interno dispare este bloque
+            if (e.target !== this) {
+                return;
+            }
+
+            if (cerrandoSubmenusInformes) {
+                return;
+            }
+
+            cerrandoSubmenusInformes = true;
+
+            $('#menu-informes-incidencia.show').collapse('hide');
+            $('#menu-informes-desaparecidos.show').collapse('hide');
+
+            setTimeout(function () {
+                cerrandoSubmenusInformes = false;
+            }, 300);
+        });
 
     });
-
-});
 
 
 
