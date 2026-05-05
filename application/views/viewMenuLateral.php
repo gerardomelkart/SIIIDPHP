@@ -98,6 +98,7 @@
         <ul class="nav flex-column">
 
 
+<!-- modulo de carga de informacion -->
 <?php
 if (
     $this->session->HabCargaInfo == 1 ||
@@ -206,7 +207,7 @@ if (
                     <!-- Incidencia Delictiva (SIN CAMBIOS EN IDs) -->
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#menu-informes-incidencia">
-                            <i class="fa fa-folder"></i> Incidencia Delictiva
+                            <i class="fa fa-folder"></i>&nbsp; Informes de Incidencia Delictiva
                             
                         </a>
 
@@ -231,7 +232,7 @@ if (
                                 <i class="fa fa-user"></i>
                                 <i class="fa fa-circle-question icon-badge-question"></i>
                             </span>
-                            Desaparecidos
+                            &nbsp; Informes de Desaparecidos
                             
                         </a>
 
@@ -281,12 +282,27 @@ if (
 
         <ul class="nav flex-column">
 
-            <!--Modulo incidencia delictiva -->
+<!-- modulo de carga de informacion -->
+<?php
+if (
+    $this->session->HabCargaInfo == 1 ||
+    $this->session->HabModifInfo == 1 ||
+    $this->session->HabModuloDesaparecidos == 1 ||
+    $this->session->HabActualizacionDesaparecidos == 1
+):
+?>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#menu-carga-informacion">
+            <i class="fa fa-upload"></i> Carga de Información
+        </a>
+
+        <ul class="nav flex-column collapse" id="menu-carga-informacion">
+
+            <!-- Modulo incidencia delictiva -->
             <?php if ($this->session->HabCargaInfo == 1 || $this->session->HabModifInfo == 1): ?>
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#menu-incidencia">
                         <i class="fa fa-folder"></i> Incidencia Delictiva
-                        
                     </a>
 
                     <ul class="nav flex-column collapse" id="menu-incidencia">
@@ -313,7 +329,7 @@ if (
             <!-- Termina Modulo incidencia delictiva -->
 
             <!-- modulo de desaparecidos -->
-            <?php if ($this->session->HabModuloDesaparecidos == 1 || $this->session->HabActualizacionDesaparecidos == 1) { ?>
+            <?php if ($this->session->HabModuloDesaparecidos == 1 || $this->session->HabActualizacionDesaparecidos == 1): ?>
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#menu-desaparecidos">
                         <span class="fa-stack icon-menu">
@@ -321,11 +337,10 @@ if (
                             <i class="fa fa-circle-question icon-badge-question"></i>
                         </span>
                         Desaparecidos
-                        
                     </a>
 
-
                     <ul class="nav flex-column collapse" id="menu-desaparecidos">
+
                         <?php if ($this->session->HabModuloDesaparecidos == 1): ?>
                             <li class="nav-item">
                                 <a id="btnCargaDesaparecidos" class="nav-link">
@@ -349,25 +364,77 @@ if (
                                 </a>
                             </li>
                         <?php endif; ?>
+
                     </ul>
                 </li>
-            <?php  } ?>
+            <?php endif; ?>
             <!-- termina modulo desaparecidos -->
 
+        </ul>
+    </li>
+<?php endif; ?>
+<!-- termina modulo carga de informacion -->
 
+
+
+            <!-- modulo informes -->
             <li class="nav-item">
                 <a class="nav-link" data-toggle="collapse" href="#menu-informes">
-                    <i class="fa fa-navicon"></i> Informes 
+                    <i class="fa fa-navicon"></i> Informes
+                    
                 </a>
+
                 <ul class="nav flex-column collapse" id="menu-informes">
-                    <li class="nav-item"><a id="btnConsultaEnvios" class="nav-link"><i class="fa fa-arrow-right"></i> Consultar Envíos</a></li>
+
+                    <!-- Incidencia Delictiva (SIN CAMBIOS EN IDs) -->
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#menu-informes-incidencia">
+                            <i class="fa fa-folder"></i>&nbsp; Informes de Incidencia Delictiva
+                            
+                        </a>
+
+                        <ul class="nav flex-column collapse" id="menu-informes-incidencia">
+                            <li class="nav-item">
+                                <a id="btnConsultaEnvios" class="nav-link">
+                                    <i class="fa fa-arrow-right"></i> Consultar Envíos de incidencia delictiva
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="btnReporteCargas" class="nav-link">
+                                    <i class="fa fa-arrow-right"></i> Reporte de Cargas de incidencia delictiva
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Desaparecidos -->
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#menu-informes-desaparecidos">
+                            <span class="icon-menu">
+                                <i class="fa fa-user"></i>
+                                <i class="fa fa-circle-question icon-badge-question"></i>
+                            </span>
+                            &nbsp; Informes de Desaparecidos
+                            
+                        </a>
+
+                        <ul class="nav flex-column collapse" id="menu-informes-desaparecidos">
+                            <li class="nav-item">
+                                <a id="btnConsultaEnviosDesaparecidos" class="nav-link">
+                                    <i class="fa fa-arrow-right"></i> Consultar Envíos de Desaparecidos
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="btnReporteCargasDesaparecidos" class="nav-link">
+                                    <i class="fa fa-arrow-right"></i> Reporte de Cargas de Desaparecidos
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
                 </ul>
             </li>
-
-
-            <li class="nav-item">
-                <a id="btnCerrarSesion" class="nav-link" style="cursor:pointer;"><i class="fa fa-power-off"></i> Cerrar Sesión</a>
-            </li>
+            <!-- termina modulo informes -->
         </ul>
     <?php  } ?>
 
@@ -378,18 +445,64 @@ if (
 
         <ul class="nav flex-column">
 
+            <!-- modulo informes -->
             <li class="nav-item">
                 <a class="nav-link" data-toggle="collapse" href="#menu-informes">
-                    <i class="fa fa-navicon"></i> Informes 
+                    <i class="fa fa-navicon"></i> Informes
+                    
                 </a>
+
                 <ul class="nav flex-column collapse" id="menu-informes">
-                    <li class="nav-item"><a id="btnConsultaEnvios" class="nav-link"><i class="fa fa-arrow-right"></i> Consultar Envíos</a></li>
+
+                    <!-- Incidencia Delictiva (SIN CAMBIOS EN IDs) -->
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#menu-informes-incidencia">
+                            <i class="fa fa-folder"></i>&nbsp; Informes de Incidencia Delictiva
+                            
+                        </a>
+
+                        <ul class="nav flex-column collapse" id="menu-informes-incidencia">
+                            <li class="nav-item">
+                                <a id="btnConsultaEnvios" class="nav-link">
+                                    <i class="fa fa-arrow-right"></i> Consultar Envíos de incidencia delictiva
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="btnReporteCargas" class="nav-link">
+                                    <i class="fa fa-arrow-right"></i> Reporte de Cargas de incidencia delictiva
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Desaparecidos -->
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#menu-informes-desaparecidos">
+                            <span class="icon-menu">
+                                <i class="fa fa-user"></i>
+                                <i class="fa fa-circle-question icon-badge-question"></i>
+                            </span>
+                            &nbsp; Informes de Desaparecidos
+                            
+                        </a>
+
+                        <ul class="nav flex-column collapse" id="menu-informes-desaparecidos">
+                            <li class="nav-item">
+                                <a id="btnConsultaEnviosDesaparecidos" class="nav-link">
+                                    <i class="fa fa-arrow-right"></i> Consultar Envíos de Desaparecidos
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="btnReporteCargasDesaparecidos" class="nav-link">
+                                    <i class="fa fa-arrow-right"></i> Reporte de Cargas de Desaparecidos
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
                 </ul>
             </li>
-
-            <li class="nav-item">
-                <a id="btnCerrarSesion" class="nav-link" style="cursor:pointer;"><i class="fa fa-power-off"></i> Cerrar Sesión</a>
-            </li>
+            <!-- termina modulo informes -->
         </ul>
     <?php  } ?>
 
