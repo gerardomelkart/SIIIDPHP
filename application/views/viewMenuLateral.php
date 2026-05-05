@@ -98,12 +98,26 @@
         <ul class="nav flex-column">
 
 
+<?php
+if (
+    $this->session->HabCargaInfo == 1 ||
+    $this->session->HabModifInfo == 1 ||
+    $this->session->HabModuloDesaparecidos == 1 ||
+    $this->session->HabActualizacionDesaparecidos == 1
+):
+?>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#menu-carga-informacion">
+            <i class="fa fa-upload"></i> Carga de Información
+        </a>
+
+        <ul class="nav flex-column collapse" id="menu-carga-informacion">
+
             <!-- Modulo incidencia delictiva -->
             <?php if ($this->session->HabCargaInfo == 1 || $this->session->HabModifInfo == 1): ?>
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#menu-incidencia">
                         <i class="fa fa-folder"></i> Incidencia Delictiva
-                        
                     </a>
 
                     <ul class="nav flex-column collapse" id="menu-incidencia">
@@ -130,7 +144,7 @@
             <!-- Termina Modulo incidencia delictiva -->
 
             <!-- modulo de desaparecidos -->
-            <?php if ($this->session->HabModuloDesaparecidos == 1 || $this->session->HabActualizacionDesaparecidos == 1) { ?>
+            <?php if ($this->session->HabModuloDesaparecidos == 1 || $this->session->HabActualizacionDesaparecidos == 1): ?>
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#menu-desaparecidos">
                         <span class="fa-stack icon-menu">
@@ -138,11 +152,10 @@
                             <i class="fa fa-circle-question icon-badge-question"></i>
                         </span>
                         Desaparecidos
-                        
                     </a>
 
-
                     <ul class="nav flex-column collapse" id="menu-desaparecidos">
+
                         <?php if ($this->session->HabModuloDesaparecidos == 1): ?>
                             <li class="nav-item">
                                 <a id="btnCargaDesaparecidos" class="nav-link">
@@ -166,12 +179,16 @@
                                 </a>
                             </li>
                         <?php endif; ?>
+
                     </ul>
                 </li>
-            <?php  } ?>
+            <?php endif; ?>
             <!-- termina modulo desaparecidos -->
 
-
+        </ul>
+    </li>
+<?php endif; ?>
+<!-- termina modulo carga de informacion -->
 
 
 
@@ -384,29 +401,28 @@
 
 
 <script>
-var cerrandoSubmenusInformes = false;
+var cerrandoSubmenusCargaInformacion = false;
 
 $(document).ready(function () {
 
-    $('#menu-informes').on('hide.bs.collapse', function () {
+    $('#menu-carga-informacion').on('hide.bs.collapse', function () {
 
-        if (cerrandoSubmenusInformes) {
+        if (cerrandoSubmenusCargaInformacion) {
             return;
         }
 
-        cerrandoSubmenusInformes = true;
+        cerrandoSubmenusCargaInformacion = true;
 
-        $('#menu-informes-incidencia.show').collapse('hide');
-        $('#menu-informes-desaparecidos.show').collapse('hide');
+        $('#menu-incidencia.show').collapse('hide');
+        $('#menu-desaparecidos.show').collapse('hide');
 
         setTimeout(function () {
-            cerrandoSubmenusInformes = false;
+            cerrandoSubmenusCargaInformacion = false;
         }, 300);
 
     });
 
 });
-
 
 
 
