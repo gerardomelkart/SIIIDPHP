@@ -98,98 +98,98 @@
         <ul class="nav flex-column">
 
 
-<!-- modulo de carga de informacion -->
-<?php
-if (
-    $this->session->HabCargaInfo == 1 ||
-    $this->session->HabModifInfo == 1 ||
-    $this->session->HabModuloDesaparecidos == 1 ||
-    $this->session->HabActualizacionDesaparecidos == 1
-):
-?>
-    <li class="nav-item">
-        <a class="nav-link" data-toggle="collapse" href="#menu-carga-informacion">
-            <i class="fa fa-upload"></i> Carga de Información
-        </a>
-
-        <ul class="nav flex-column collapse" id="menu-carga-informacion">
-
-            <!-- Modulo incidencia delictiva -->
-            <?php if ($this->session->HabCargaInfo == 1 || $this->session->HabModifInfo == 1): ?>
+            <!-- modulo de carga de informacion -->
+            <?php
+            if (
+                $this->session->HabCargaInfo == 1 ||
+                $this->session->HabModifInfo == 1 ||
+                $this->session->HabModuloDesaparecidos == 1 ||
+                $this->session->HabActualizacionDesaparecidos == 1
+            ):
+            ?>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="#menu-incidencia">
-                        <i class="fa fa-folder"></i> Incidencia Delictiva
+                    <a class="nav-link" data-toggle="collapse" href="#menu-carga-informacion">
+                        <i class="fa fa-upload"></i> Carga de Información
                     </a>
 
-                    <ul class="nav flex-column collapse" id="menu-incidencia">
+                    <ul class="nav flex-column collapse" id="menu-carga-informacion">
 
-                        <?php if ($this->session->HabCargaInfo == 1): ?>
+                        <!-- Modulo incidencia delictiva -->
+                        <?php if ($this->session->HabCargaInfo == 1 || $this->session->HabModifInfo == 1): ?>
                             <li class="nav-item">
-                                <a id="btnIrEnviarInf" class="nav-link">
-                                    <i class="fa fa-upload"></i> Integrar Información
+                                <a class="nav-link" data-toggle="collapse" href="#menu-incidencia">
+                                    <i class="fa fa-folder"></i> Incidencia Delictiva
                                 </a>
+
+                                <ul class="nav flex-column collapse" id="menu-incidencia">
+
+                                    <?php if ($this->session->HabCargaInfo == 1): ?>
+                                        <li class="nav-item">
+                                            <a id="btnIrEnviarInf" class="nav-link">
+                                                <i class="fa fa-upload"></i> Integrar Información
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+
+                                    <?php if ($this->session->HabModifInfo == 1): ?>
+                                        <li class="nav-item">
+                                            <a id="btnIrActualizarInf" class="nav-link">
+                                                <i class="fa fa-refresh"></i> Actualizar Información
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+
+                                </ul>
                             </li>
                         <?php endif; ?>
+                        <!-- Termina Modulo incidencia delictiva -->
 
-                        <?php if ($this->session->HabModifInfo == 1): ?>
+                        <!-- modulo de desaparecidos -->
+                        <?php if ($this->session->HabModuloDesaparecidos == 1 || $this->session->HabActualizacionDesaparecidos == 1): ?>
                             <li class="nav-item">
-                                <a id="btnIrActualizarInf" class="nav-link">
-                                    <i class="fa fa-refresh"></i> Actualizar Información
+                                <a class="nav-link" data-toggle="collapse" href="#menu-desaparecidos">
+                                    <span class="fa-stack icon-menu">
+                                        <i class="fa fa-user fa-stack-1x"></i>
+                                        <i class="fa fa-circle-question icon-badge-question"></i>
+                                    </span>
+                                    Desaparecidos
                                 </a>
+
+                                <ul class="nav flex-column collapse" id="menu-desaparecidos">
+
+                                    <?php if ($this->session->HabModuloDesaparecidos == 1): ?>
+                                        <li class="nav-item">
+                                            <a id="btnCargaDesaparecidos" class="nav-link">
+                                                <span class="fa-stack icon-menu">
+                                                    <i class="fa fa-user fa-stack-1x"></i>
+                                                    <i class="fa fa-upload icon-badge-upload"></i>
+                                                </span>
+                                                Carga Desaparecidos
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+
+                                    <?php if ($this->session->HabActualizacionDesaparecidos == 1): ?>
+                                        <li class="nav-item">
+                                            <a id="btnActualizaDesaparecidos" class="nav-link">
+                                                <span class="fa-stack icon-menu">
+                                                    <i class="fa fa-user fa-stack-1x"></i>
+                                                    <i class="fa fa-refresh icon-badge-refresh"></i>
+                                                </span>
+                                                Actualizar Desaparecidos
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+
+                                </ul>
                             </li>
                         <?php endif; ?>
+                        <!-- termina modulo desaparecidos -->
 
                     </ul>
                 </li>
             <?php endif; ?>
-            <!-- Termina Modulo incidencia delictiva -->
-
-            <!-- modulo de desaparecidos -->
-            <?php if ($this->session->HabModuloDesaparecidos == 1 || $this->session->HabActualizacionDesaparecidos == 1): ?>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="#menu-desaparecidos">
-                        <span class="fa-stack icon-menu">
-                            <i class="fa fa-user fa-stack-1x"></i>
-                            <i class="fa fa-circle-question icon-badge-question"></i>
-                        </span>
-                        Desaparecidos
-                    </a>
-
-                    <ul class="nav flex-column collapse" id="menu-desaparecidos">
-
-                        <?php if ($this->session->HabModuloDesaparecidos == 1): ?>
-                            <li class="nav-item">
-                                <a id="btnCargaDesaparecidos" class="nav-link">
-                                    <span class="fa-stack icon-menu">
-                                        <i class="fa fa-user fa-stack-1x"></i>
-                                        <i class="fa fa-upload icon-badge-upload"></i>
-                                    </span>
-                                    Carga Desaparecidos
-                                </a>
-                            </li>
-                        <?php endif; ?>
-
-                        <?php if ($this->session->HabActualizacionDesaparecidos == 1): ?>
-                            <li class="nav-item">
-                                <a id="btnActualizaDesaparecidos" class="nav-link">
-                                    <span class="fa-stack icon-menu">
-                                        <i class="fa fa-user fa-stack-1x"></i>
-                                        <i class="fa fa-refresh icon-badge-refresh"></i>
-                                    </span>
-                                    Actualizar Desaparecidos
-                                </a>
-                            </li>
-                        <?php endif; ?>
-
-                    </ul>
-                </li>
-            <?php endif; ?>
-            <!-- termina modulo desaparecidos -->
-
-        </ul>
-    </li>
-<?php endif; ?>
-<!-- termina modulo carga de informacion -->
+            <!-- termina modulo carga de informacion -->
 
 
 
@@ -199,7 +199,7 @@ if (
             <li class="nav-item">
                 <a class="nav-link" data-toggle="collapse" href="#menu-informes">
                     <i class="fa fa-navicon"></i> Informes
-                    
+
                 </a>
 
                 <ul class="nav flex-column collapse" id="menu-informes">
@@ -208,7 +208,7 @@ if (
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#menu-informes-incidencia">
                             <i class="fa fa-folder"></i>&nbsp; Informes de Incidencia Delictiva
-                            
+
                         </a>
 
                         <ul class="nav flex-column collapse" id="menu-informes-incidencia">
@@ -232,8 +232,8 @@ if (
                                 <i class="fa fa-user"></i>
                                 <i class="fa fa-circle-question icon-badge-question"></i>
                             </span>
-                            &nbsp; Informes de Desaparecidos
-                            
+                            Informes de Desaparecidos
+
                         </a>
 
                         <ul class="nav flex-column collapse" id="menu-informes-desaparecidos">
@@ -261,7 +261,7 @@ if (
 
             <li class="nav-item">
                 <a class="nav-link" data-toggle="collapse" href="#menu-catalogos">
-                    <i class="fa fa-book"></i> Catálogos 
+                    <i class="fa fa-book"></i> Catálogos
                 </a>
                 <ul class="nav flex-column collapse" id="menu-catalogos">
                     <li class="nav-item"><a id="btnIrRegUsuarios" class="nav-link" style="cursor:pointer;"><i class="fa fa-arrow-right"></i> Usuarios</a></li>
@@ -282,98 +282,98 @@ if (
 
         <ul class="nav flex-column">
 
-<!-- modulo de carga de informacion -->
-<?php
-if (
-    $this->session->HabCargaInfo == 1 ||
-    $this->session->HabModifInfo == 1 ||
-    $this->session->HabModuloDesaparecidos == 1 ||
-    $this->session->HabActualizacionDesaparecidos == 1
-):
-?>
-    <li class="nav-item">
-        <a class="nav-link" data-toggle="collapse" href="#menu-carga-informacion">
-            <i class="fa fa-upload"></i> Carga de Información
-        </a>
-
-        <ul class="nav flex-column collapse" id="menu-carga-informacion">
-
-            <!-- Modulo incidencia delictiva -->
-            <?php if ($this->session->HabCargaInfo == 1 || $this->session->HabModifInfo == 1): ?>
+            <!-- modulo de carga de informacion -->
+            <?php
+            if (
+                $this->session->HabCargaInfo == 1 ||
+                $this->session->HabModifInfo == 1 ||
+                $this->session->HabModuloDesaparecidos == 1 ||
+                $this->session->HabActualizacionDesaparecidos == 1
+            ):
+            ?>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="#menu-incidencia">
-                        <i class="fa fa-folder"></i> Incidencia Delictiva
+                    <a class="nav-link" data-toggle="collapse" href="#menu-carga-informacion">
+                        <i class="fa fa-upload"></i> Carga de Información
                     </a>
 
-                    <ul class="nav flex-column collapse" id="menu-incidencia">
+                    <ul class="nav flex-column collapse" id="menu-carga-informacion">
 
-                        <?php if ($this->session->HabCargaInfo == 1): ?>
+                        <!-- Modulo incidencia delictiva -->
+                        <?php if ($this->session->HabCargaInfo == 1 || $this->session->HabModifInfo == 1): ?>
                             <li class="nav-item">
-                                <a id="btnIrEnviarInf" class="nav-link">
-                                    <i class="fa fa-upload"></i> Integrar Información
+                                <a class="nav-link" data-toggle="collapse" href="#menu-incidencia">
+                                    <i class="fa fa-folder"></i> Incidencia Delictiva
                                 </a>
+
+                                <ul class="nav flex-column collapse" id="menu-incidencia">
+
+                                    <?php if ($this->session->HabCargaInfo == 1): ?>
+                                        <li class="nav-item">
+                                            <a id="btnIrEnviarInf" class="nav-link">
+                                                <i class="fa fa-upload"></i> Integrar Información
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+
+                                    <?php if ($this->session->HabModifInfo == 1): ?>
+                                        <li class="nav-item">
+                                            <a id="btnIrActualizarInf" class="nav-link">
+                                                <i class="fa fa-refresh"></i> Actualizar Información
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+
+                                </ul>
                             </li>
                         <?php endif; ?>
+                        <!-- Termina Modulo incidencia delictiva -->
 
-                        <?php if ($this->session->HabModifInfo == 1): ?>
+                        <!-- modulo de desaparecidos -->
+                        <?php if ($this->session->HabModuloDesaparecidos == 1 || $this->session->HabActualizacionDesaparecidos == 1): ?>
                             <li class="nav-item">
-                                <a id="btnIrActualizarInf" class="nav-link">
-                                    <i class="fa fa-refresh"></i> Actualizar Información
+                                <a class="nav-link" data-toggle="collapse" href="#menu-desaparecidos">
+                                    <span class="fa-stack icon-menu">
+                                        <i class="fa fa-user fa-stack-1x"></i>
+                                        <i class="fa fa-circle-question icon-badge-question"></i>
+                                    </span>
+                                    Desaparecidos
                                 </a>
+
+                                <ul class="nav flex-column collapse" id="menu-desaparecidos">
+
+                                    <?php if ($this->session->HabModuloDesaparecidos == 1): ?>
+                                        <li class="nav-item">
+                                            <a id="btnCargaDesaparecidos" class="nav-link">
+                                                <span class="fa-stack icon-menu">
+                                                    <i class="fa fa-user fa-stack-1x"></i>
+                                                    <i class="fa fa-upload icon-badge-upload"></i>
+                                                </span>
+                                                Carga Desaparecidos
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+
+                                    <?php if ($this->session->HabActualizacionDesaparecidos == 1): ?>
+                                        <li class="nav-item">
+                                            <a id="btnActualizaDesaparecidos" class="nav-link">
+                                                <span class="fa-stack icon-menu">
+                                                    <i class="fa fa-user fa-stack-1x"></i>
+                                                    <i class="fa fa-refresh icon-badge-refresh"></i>
+                                                </span>
+                                                Actualizar Desaparecidos
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+
+                                </ul>
                             </li>
                         <?php endif; ?>
+                        <!-- termina modulo desaparecidos -->
 
                     </ul>
                 </li>
             <?php endif; ?>
-            <!-- Termina Modulo incidencia delictiva -->
-
-            <!-- modulo de desaparecidos -->
-            <?php if ($this->session->HabModuloDesaparecidos == 1 || $this->session->HabActualizacionDesaparecidos == 1): ?>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="#menu-desaparecidos">
-                        <span class="fa-stack icon-menu">
-                            <i class="fa fa-user fa-stack-1x"></i>
-                            <i class="fa fa-circle-question icon-badge-question"></i>
-                        </span>
-                        Desaparecidos
-                    </a>
-
-                    <ul class="nav flex-column collapse" id="menu-desaparecidos">
-
-                        <?php if ($this->session->HabModuloDesaparecidos == 1): ?>
-                            <li class="nav-item">
-                                <a id="btnCargaDesaparecidos" class="nav-link">
-                                    <span class="fa-stack icon-menu">
-                                        <i class="fa fa-user fa-stack-1x"></i>
-                                        <i class="fa fa-upload icon-badge-upload"></i>
-                                    </span>
-                                    Carga Desaparecidos
-                                </a>
-                            </li>
-                        <?php endif; ?>
-
-                        <?php if ($this->session->HabActualizacionDesaparecidos == 1): ?>
-                            <li class="nav-item">
-                                <a id="btnActualizaDesaparecidos" class="nav-link">
-                                    <span class="fa-stack icon-menu">
-                                        <i class="fa fa-user fa-stack-1x"></i>
-                                        <i class="fa fa-refresh icon-badge-refresh"></i>
-                                    </span>
-                                    Actualizar Desaparecidos
-                                </a>
-                            </li>
-                        <?php endif; ?>
-
-                    </ul>
-                </li>
-            <?php endif; ?>
-            <!-- termina modulo desaparecidos -->
-
-        </ul>
-    </li>
-<?php endif; ?>
-<!-- termina modulo carga de informacion -->
+            <!-- termina modulo carga de informacion -->
 
 
 
@@ -381,7 +381,7 @@ if (
             <li class="nav-item">
                 <a class="nav-link" data-toggle="collapse" href="#menu-informes">
                     <i class="fa fa-navicon"></i> Informes
-                    
+
                 </a>
 
                 <ul class="nav flex-column collapse" id="menu-informes">
@@ -390,7 +390,7 @@ if (
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#menu-informes-incidencia">
                             <i class="fa fa-folder"></i>&nbsp; Informes de Incidencia Delictiva
-                            
+
                         </a>
 
                         <ul class="nav flex-column collapse" id="menu-informes-incidencia">
@@ -414,8 +414,8 @@ if (
                                 <i class="fa fa-user"></i>
                                 <i class="fa fa-circle-question icon-badge-question"></i>
                             </span>
-                            &nbsp; Informes de Desaparecidos
-                            
+                            Informes de Desaparecidos
+
                         </a>
 
                         <ul class="nav flex-column collapse" id="menu-informes-desaparecidos">
@@ -435,6 +435,9 @@ if (
                 </ul>
             </li>
             <!-- termina modulo informes -->
+            <li class="nav-item">
+                <a id="btnCerrarSesion" class="nav-link" style="cursor:pointer;"><i class="fa fa-power-off"></i> Cerrar Sesión</a>
+            </li>
         </ul>
     <?php  } ?>
 
@@ -449,7 +452,7 @@ if (
             <li class="nav-item">
                 <a class="nav-link" data-toggle="collapse" href="#menu-informes">
                     <i class="fa fa-navicon"></i> Informes
-                    
+
                 </a>
 
                 <ul class="nav flex-column collapse" id="menu-informes">
@@ -458,7 +461,7 @@ if (
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#menu-informes-incidencia">
                             <i class="fa fa-folder"></i>&nbsp; Informes de Incidencia Delictiva
-                            
+
                         </a>
 
                         <ul class="nav flex-column collapse" id="menu-informes-incidencia">
@@ -482,8 +485,8 @@ if (
                                 <i class="fa fa-user"></i>
                                 <i class="fa fa-circle-question icon-badge-question"></i>
                             </span>
-                            &nbsp; Informes de Desaparecidos
-                            
+                            Informes de Desaparecidos
+
                         </a>
 
                         <ul class="nav flex-column collapse" id="menu-informes-desaparecidos">
@@ -503,6 +506,9 @@ if (
                 </ul>
             </li>
             <!-- termina modulo informes -->
+            <li class="nav-item">
+                <a id="btnCerrarSesion" class="nav-link" style="cursor:pointer;"><i class="fa fa-power-off"></i> Cerrar Sesión</a>
+            </li>
         </ul>
     <?php  } ?>
 
@@ -517,10 +523,10 @@ if (
     var cerrandoSubmenusInformes = false;
     var cerrandoSubmenusCargaInformacion = false;
 
-    $(document).ready(function () {
+    $(document).ready(function() {
 
         // Cerrar submenús internos cuando se cierre Carga de Información
-        $('#menu-carga-informacion').on('hide.bs.collapse', function (e) {
+        $('#menu-carga-informacion').on('hide.bs.collapse', function(e) {
 
             // Evita que el evento de un submenú interno dispare este bloque
             if (e.target !== this) {
@@ -536,14 +542,14 @@ if (
             $('#menu-incidencia.show').collapse('hide');
             $('#menu-desaparecidos.show').collapse('hide');
 
-            setTimeout(function () {
+            setTimeout(function() {
                 cerrandoSubmenusCargaInformacion = false;
             }, 300);
         });
 
 
         // Cerrar submenús internos cuando se cierre Informes
-        $('#menu-informes').on('hide.bs.collapse', function (e) {
+        $('#menu-informes').on('hide.bs.collapse', function(e) {
 
             // Evita que el evento de un submenú interno dispare este bloque
             if (e.target !== this) {
@@ -559,7 +565,7 @@ if (
             $('#menu-informes-incidencia.show').collapse('hide');
             $('#menu-informes-desaparecidos.show').collapse('hide');
 
-            setTimeout(function () {
+            setTimeout(function() {
                 cerrandoSubmenusInformes = false;
             }, 300);
         });
