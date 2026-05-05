@@ -588,13 +588,13 @@
     /*PETICION  PARA OPCION DE CONSULTAR ENVIOS DE DESAPARECIDOS Y REIMPRIMIR ACUSE perfil: Administrador(todos) y Operador(solo sus registros)*/
     $("#btnConsultaEnviosDesaparecidos").click(function() {
 
-        ejecutaPeticionAjaxCargaSeccion("../../ConSeleccionador/CargaVistaConsultaEnvios", "contenedorGeneral");
+        ejecutaPeticionAjaxCargaSeccion("../../ConSeleccionador/CargaVistaConsultaEnviosDesaparecidos", "contenedorGeneral");
     })
 
     /*PETICION  PARA OPCION DE CONSULTAR REPORTE DE CARGAS DE DESAPARECIDOS POR ESTADO: Administrador*/
     $("#btnReporteCargasDesaparecidos").click(function() {
 
-        ejecutaPeticionAjaxCargaSeccion("../../ConSeleccionador/CargaVistaReporteCargas", "contenedorGeneral");
+        ejecutaPeticionAjaxCargaSeccion("../../ConSeleccionador/CargaVistaReporteCargasDesaparecidos", "contenedorGeneral");
     })
 
 
